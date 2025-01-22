@@ -1,0 +1,8 @@
+{
+    "products": [
+      { "id": 1, "name": "Telefon", "price": 1000, "image": "https://via.placeholder.com/150" },
+      { "id": 2, "name": "Laptop", "price": 5000, "image": "https://via.placeholder.com/150" },
+      { "id": 3, "name": "Tablet", "price": 3000, "image": "https://via.placeholder.com/150" }
+    ]
+  }
+  
