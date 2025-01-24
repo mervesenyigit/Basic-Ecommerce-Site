@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; 
+  padding: 20px;
+}
+
+.card {
+  width: 250px; /* Kart genişliği */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Hover'da hafif büyüme efekti */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 16px;
+  color: #666;
+}

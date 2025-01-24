@@ -1,0 +1,10 @@
+
+.custom-button:hover {
+    background-color: #3e8e41; /* Daha koyu bir renk */
+    color: white; /* Yazı rengini beyaza çevir */
+  }
+  
+
+  .custom-button:active {
+    transform: scale(0.95); /* Düğme küçülüyor gibi görünür */
+  }

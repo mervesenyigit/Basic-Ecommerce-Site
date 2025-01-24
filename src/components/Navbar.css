@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #04BFBF;
+    color: white;
+  }
+  
+
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    transform: scale(1.1); 
+    color: #FFD700;
+  }
+  
+  .cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+  }
+  
+  .cart-badge {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+  

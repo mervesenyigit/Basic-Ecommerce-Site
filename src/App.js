@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
+import { CartProvider } from "./components/CartContext"; 
 
-import './App.css';
 
-function App() {
+
+const App = () => {
+  const [cart, setCart] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <CartProvider>
       <Router>
-      <Routes>
-        <Route path="/" element={<ProductList />} />
-        {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
-        {/* <Route path="/cart" element={<Cart />} /> */}
-      </Routes>
-    </Router>
-      </header>
-    </div>
+        <Navbar />
+        <Routes>
+          <Route path="/products" element={<ProductList />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
-}
+};
 
 export default App;
