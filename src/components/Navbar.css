@@ -31,7 +31,10 @@
     transform: scale(1.1); 
     color: #FFD700;
   }
-  
+  .cart-icon-link {
+   text-decoration: none;
+  }
+
   .cart-icon {
     position: relative;
     cursor: pointer;

@@ -12,13 +12,18 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/products">Products</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+       
       </ul>
+      <Link to="/cart" className="cart-icon-link">
       <div className="cart-icon">
         🛒
         {cart.length > 0 && (
           <span className="cart-badge">{cart.length}</span> 
         )}
+        
       </div>
+      </Link>
+     
     </nav>
   );
 };
