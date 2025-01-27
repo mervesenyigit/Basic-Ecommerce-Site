@@ -1,0 +1,49 @@
+
+
+{
+  "header": {
+    "title": "Welcome to Our Store",
+    "subtitle": "Best products at the best prices!"
+  },
+  "slider": [
+    {
+      "id": 1,
+      "image": "/images/computer.jpg",
+      "alt": "Slider Image 1"
+    },
+    {
+      "id": 2,
+      "image": "/images/computerr.jpg",
+      "alt": "Slider Image 2"
+    },
+    {
+      "id": 3,
+      "image": "/images/gaming-computer.jpg",
+      "alt": "Slider Image 3"
+    }
+
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Telefon",
+      "price": 1000,
+      "image": "src/images/computer.jpg",
+      "piece": 1
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "price": 5000,
+      "image": "https://picsum.photos/150?random=2",
+      "piece": 1
+    },
+    {
+      "id": 3,
+      "name": "Tablet",
+      "price": 3000,
+      "image": "https://picsum.photos/150?random=3",
+      "piece": 1
+    }
+  ]
+}

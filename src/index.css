@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Slider yüksekliği */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  opacity: 0; /* Başlangıçta gizli */
+}
+
+.slide.active {
+  opacity: 1; /* Aktif slayt görünür */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
