@@ -7,7 +7,8 @@ import Button from "./Button";
 
 const Cart = () => {
 
-    const { cart, deleteCard  } = useCart(); 
+    const { cart, deleteCard ,incPiece,decPiece  } = useCart(); 
+ 
 
 
   return (
@@ -20,12 +21,14 @@ const Cart = () => {
         {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
             ) : (
-                <table className="table table-bordered">
+                <table className="table ">
                 <thead>
                     <tr>
                     <th>Image</th>
                     <th>Product Name</th>
-                    <th>Price</th>
+                    <th>Piece</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
                     <th>Delete</th>
                     </tr>
                 </thead>
@@ -36,7 +39,15 @@ const Cart = () => {
                         <img src={item.image} alt={item.name} style={{ width: "50px" }} />
                         </td>
                         <td>{item.name}</td>
+                        <td>
+                            <Button  backgroundColor="#04BFBF" color="white" onClick={()=>decPiece(index)}>-</Button>
+                            {item.piece}
+                            <Button  backgroundColor="#04BFBF" color="white" onClick={()=>incPiece(index)} >+</Button>
+                   
+                          
+                        </td>
                         <td>{item.price} TL</td>
+                        <td>{item.price * item.piece} TL</td>
                         <td>
                             {/* <Button></Button> */}
                             <Button  backgroundColor="#04BFBF" color="white" onClick={() => deleteCard(index)}><i className="bi bi-trash3" ></i></Button>
