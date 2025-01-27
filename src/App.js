@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Cart from "./components/Cart";
 import { CartProvider } from "./components/CartContext"; 
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 
 

@@ -10,9 +10,14 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => [...prevCart, product]);
 
   };
+    // Ürün silme fonksiyonu
+    const deleteCard = (index) => {
+        const newCart = cart.filter((_, i) => i !== index); 
+        setCart(newCart);
+      };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart  }}>
+    <CartContext.Provider value={{ cart, addToCart ,deleteCard}}> 
       {children}
     </CartContext.Provider>
   );

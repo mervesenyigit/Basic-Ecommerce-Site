@@ -10,10 +10,13 @@
   }
   
   h1.text-center {
+    display: flex !important;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    justify-content: center;
   }
+
   
   .empty-cart {
     text-align: center;
@@ -23,14 +26,19 @@
   
   /* Tablo stili */
   .cart-table {
-    width: 100%;
-    border-collapse: collapse;
+    /* width: 100%; */
+  
     margin-top: 20px;
+ 
+    border-spacing: 10px;
+    display: flex;
+    justify-content: center;
+   
   }
   
   .cart-table th,
   .cart-table td {
-    padding: 12px;
+    padding: 25px;
     text-align: center;
   }
   
@@ -43,10 +51,12 @@
   
   .cart-table td {
     border-bottom: 1px solid #ddd;
+
   }
   
   .cart-table tr:hover {
     background-color: #f1f1f1;
+    line-height: 1.6;
   }
   
   /* Ürün görselleri */
