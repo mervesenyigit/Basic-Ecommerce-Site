@@ -1,89 +1,81 @@
 import Button from "./Button";
-import Header from "./Header";
-import data from "../data/db.json"; 
 
+import data from "../data/db.json"; 
 import React, { useState, useEffect } from "react";
+
 const Home = () => {
-     // Slider için aktif index yönetimi
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [slideInterval, setSlideInterval] = useState(null);
-  const [display, setDisplay] = useState("block");
-  
+  const [isPlaying, setIsPlaying] = useState(true); // Oynatma durumu kontrolü
+  let slideInterval;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === data.slider.length - 1 ? 0 : prevSlide + 1
- 
-      );
-
-    }, 1000);
-
-    if (display === "none" && slideInterval) {
-      clearInterval(slideInterval);
-      setSlideInterval(null);
-    } else {
-      setSlideInterval(interval); // interval sadece display "none" değilse set edilir
+    if (isPlaying) {
+      slideInterval = setInterval(() => {
+        setCurrentSlide((prevSlide) => {
+          let nextSlide = prevSlide === data.slider.length - 1 ? 0 : prevSlide + 1;
+          return data.slider[nextSlide]?.image ? nextSlide : 0; // Eğer görsel yoksa başa dön
+        });
+      }, 3000);
     }
 
-    return () => clearInterval(interval);
-  }, [display]);
+    return () => clearInterval(slideInterval);
+  }, [isPlaying]); // Oynatma durumu değiştiğinde useEffect yeniden çalışır
 
   const pauseSlider = () => {
-    if (slideInterval) {
-      clearInterval(slideInterval);
-      setSlideInterval(null);
-    }
-
-    else {
-      const interval = setInterval(() => {
-        setCurrentSlide((prevSlide) =>
-          prevSlide === data.slider.length - 1 ? 0 : prevSlide + 1
-        );
-      }, 3000);
-      setSlideInterval(interval);
-    }
+    setIsPlaying((prev) => !prev); // Oynatma durumunu değiştir
   };
 
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => {
+      let nextSlide = prevSlide === data.slider.length - 1 ? 0 : prevSlide + 1;
+      return data.slider[nextSlide]?.image ? nextSlide : 0; // Eğer görsel yoksa başa dön
+    });
+  };
 
-    return (
-        <div>
-     
-        <header>
-          <h1 className="text-center">{data.header.title}</h1>
-          <p style={{ display: "flex", flexWrap: "wrap" ,justifyContent:'center'}}>{data.header.subtitle}</p>
-        </header>
-  
-       
-        <div className="slider-container">
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => {
+      let prev = prevSlide === 0 ? data.slider.length - 1 : prevSlide - 1;
+      return data.slider[prev]?.image ? prev : 0; // Eğer görsel yoksa başa dön
+    });
+  };
+
+  return (
+    <div>
+      <header>
+        <h1 className="text-center">{data.header.title}</h1>
+        <p style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+          {data.header.subtitle}
+        </p>
+      </header>
+
+      <div className="slider-container">
         {data.slider.map((slide, index) => (
           <div
             key={slide.id}
             className={`slide ${index === currentSlide ? "active" : ""}`}
-            style={{ 
-              backgroundImage: `url(${slide.image})`, 
-              display: index === currentSlide ? 'block' : 'none'  
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              display: index === currentSlide ? "block" : "none",
             }}
           >
             <img src={slide.image} alt={slide.alt} />
           </div>
         ))}
+      </div>
 
-       
-      </div>
-        
       <div className="slider-buttons">
-          <Button borderRadius="0" backgroundColor="#04BFBF" color="white" onClick={() => setCurrentSlide((prevSlide) => prevSlide - 1)}>
+        <Button borderRadius="0" backgroundColor="#04BFBF" color="white" onClick={prevSlide}>
           <i className="bi bi-arrow-left-circle"></i>
-          </Button>
-          <Button    backgroundColor="#04BFBF" color="white" onClick={() => setCurrentSlide((prevSlide) => prevSlide + 1)}>
+        </Button>
+        <Button backgroundColor="#04BFBF" color="white" onClick={nextSlide}>
           <i className="bi bi-arrow-right-circle"></i>
-          </Button>
-          <Button backgroundColor="#04BFBF" color="white" onClick={pauseSlider}>
-          <i className={slideInterval ? "bi bi-pause-circle" : "bi bi-play-circle"}></i>
-          </Button>
-        </div>
+        </Button>
+        <Button backgroundColor="#04BFBF" color="white" onClick={pauseSlider}>
+          <i className={isPlaying ? "bi bi-pause-circle" : "bi bi-play-circle"}></i>
+        </Button>
       </div>
-      );
-}
-export default Home;    
+    </div>
+  );
+};
+
+export default Home;
