@@ -28,7 +28,7 @@
       "id": 1,
       "name": "Telefon",
       "price": 1000,
-      "image": "src/images/computer.jpg",
+      "image": "https://picsum.photos/150?random=1",
       "piece": 1
     },
     {
