@@ -2,10 +2,16 @@ import Button from "./Button";
 
 import data from "../data/db.json"; 
 import React, { useState, useEffect } from "react";
+import Category from "./Category";
+import { Link } from "react-router-dom"; 
+import "../index.css";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true); // Oynatma durumu kontrolü
+  
+  const [categories, setCategories] = useState(data.categories);
+
   let slideInterval;
 
   useEffect(() => {
@@ -74,7 +80,18 @@ const Home = () => {
           <i className={isPlaying ? "bi bi-pause-circle" : "bi bi-play-circle"}></i>
         </Button>
       </div>
+   
+      <div className="container">
+        <div className="cards">
+          {categories.map((category) => (
+            <Category key={category.id} category={category} />
+          ))}
+        </div>
+      </div>
     </div>
+  
+
+
   );
 };
 

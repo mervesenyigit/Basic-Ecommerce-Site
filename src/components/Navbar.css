@@ -6,8 +6,19 @@
     background: #04BFBF;
     color: white;
   }
-  
+  .navbar .logo {
+    z-index: 100;
+    margin: 0;  
+    padding: 0;
+    flex: 0 1 auto;   /* Flex kullanarak sabitleme */
+}
 
+.navbar .logo img {
+  width: 58px;
+  height: auto;
+  max-width: 100%;
+}
+  
   
   .nav-links {
     list-style: none;

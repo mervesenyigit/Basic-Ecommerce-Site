@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+ import Category from "./components/Category";
 import { CartProvider } from "./components/CartContext"; 
 import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
+         <Route path="/category" element={<Category />} />
       </Routes>
     </Router>
   </CartProvider>

@@ -44,8 +44,9 @@ code {
 .slider-buttons{
   position: absolute;
   top: 96%; 
-  left: 0;
-  right: -62%;
+  left: 80%;
+  
+
   display: flex;
   justify-content: center;
   transform: translateY(-50%);
@@ -62,5 +63,83 @@ code {
 .slider-buttons i{
   font-size: 2em;
   color: white;
+}
+
+/* .cards{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10em;
+  margin-top: 20px;
+  color: #04BFBF;
+}
+.card-content img{
+  border-radius: 50% !important;
+  width: 100px;
+} */
+
+
+
+/* Container için genel stil */
+.container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Cards bölümünü düzenlemek için */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Otomatik sütun sayısı, minimum genişlik 250px */
+  gap: 20px; /* Kartlar arasındaki boşluk */
+  justify-content: center; /* Kartları ortalar */
+  align-items: start; /* Başlangıç noktasına hizalar */
+  margin-top: 30px;
+  flex-direction: row;
+}
+
+/* Her bir kartın stilini düzenlemek için */
+.card-content {
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 28px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer; /* Tıklanabilir his */
+  text-align: center;
+  gap: 12em;
+ 
+}
+
+.card-content:hover {
+  transform: translateY(-10px); /* Hover efekti: kartı yukarı kaydır */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover'da gölgeyi artır */
+}
+
+/* Kart içindeki görselin stilini ayarlamak için */
+.card-content img {
+  width: 100px; /* Görselin genişliği */
+  height: 100px; /* Görselin yüksekliği */
+  object-fit: cover; /* Görselin düzgün bir şekilde kutuya yerleşmesini sağlar */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Kart başlıkları için stil */
+.card-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Kart açıklamaları için stil */
+.card-content p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 

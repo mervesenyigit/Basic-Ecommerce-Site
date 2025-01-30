@@ -2,12 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom"; 
 import "./Navbar.css"; 
 import { useCart } from "./CartContext";
+import lamp from '../../src/lampp.png';
+
 
 const Navbar = () => {
   const { cart } = useCart();
   return (
     <nav className="navbar">
-      <h1 className="logo">Shoping</h1>
+      <h1 className="logo ">
+        <img src={lamp} alt="" />
+      </h1>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/products">Products</Link></li>

@@ -1,5 +1,3 @@
-
-
 {
   "header": {
     "title": "Welcome to Our Store",
@@ -21,7 +19,23 @@
       "image": "/images/gaming-computer.jpg",
       "alt": "Slider Image 3"
     }
-
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Elektronik",
+      "image": "/images/laptop.png"
+    },
+    {
+      "id": 2,
+      "name": "Moda",
+      "image": "/images/laptop.png"
+    },
+    {
+      "id": 3,
+      "name": "Ev & Yaşam",
+      "image": "/images/laptop.png"
+    }
   ],
   "products": [
     {
@@ -29,21 +43,48 @@
       "name": "Telefon",
       "price": 1000,
       "image": "https://picsum.photos/150?random=1",
-      "piece": 1
+      "piece": 1,
+      "categoryId": 1
     },
     {
       "id": 2,
       "name": "Laptop",
       "price": 5000,
       "image": "https://picsum.photos/150?random=2",
-      "piece": 1
+      "piece": 1,
+      "categoryId": 1
     },
     {
       "id": 3,
       "name": "Tablet",
       "price": 3000,
       "image": "https://picsum.photos/150?random=3",
-      "piece": 1
+      "piece": 1,
+      "categoryId": 1
+    },
+    {
+      "id": 4,
+      "name": "T-shirt",
+      "price": 150,
+      "image": "https://picsum.photos/150?random=4",
+      "piece": 1,
+      "categoryId": 2
+    },
+    {
+      "id": 5,
+      "name": "Jeans",
+      "price": 200,
+      "image": "https://picsum.photos/150?random=5",
+      "piece": 1,
+      "categoryId": 2
+    },
+    {
+      "id": 6,
+      "name": "Sofa",
+      "price": 3000,
+      "image": "https://picsum.photos/150?random=6",
+      "piece": 1,
+      "categoryId": 3
     }
   ]
 }
