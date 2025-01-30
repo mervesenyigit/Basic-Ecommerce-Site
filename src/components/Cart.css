@@ -72,3 +72,8 @@
     border-radius: 5px;
   }
   
+  .total {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 4em;
+}

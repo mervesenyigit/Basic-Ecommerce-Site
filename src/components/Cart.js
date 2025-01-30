@@ -57,8 +57,16 @@ const Cart = () => {
                 </tbody>
                 </table>
             )}
-        </div>
-   
+        </div >
+      
+            <div className="total">
+                <h3>
+                    {cart.length === 0 
+                        ? ""
+                        : `Total: ${cart.reduce((acc, item) => acc + item.price * item.piece, 0)} TL`}
+                </h3>
+            </div>
+
     </div>
   );
 };
