@@ -35,6 +35,21 @@
       "id": 3,
       "name": "Ev & Yaşam",
       "image": "/images/laptop.png"
+    },
+    {
+      "id": 4,
+      "name": "Hayvanlar",
+      "image": "/images/laptop.png"
+    },
+    {
+      "id": 5,
+      "name": "Kitaplar",
+      "image": "/images/laptop.png"
+    },
+    {
+      "id": 6,
+      "name": "Oyuncaklar",
+      "image": "/images/laptop.png"
     }
   ],
   "products": [

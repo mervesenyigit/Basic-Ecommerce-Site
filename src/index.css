@@ -89,15 +89,16 @@ code {
 }
 
 /* Cards bölümünü düzenlemek için */
-.cards {
+.cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Otomatik sütun sayısı, minimum genişlik 250px */
-  gap: 20px; /* Kartlar arasındaki boşluk */
-  justify-content: center; /* Kartları ortalar */
-  align-items: start; /* Başlangıç noktasına hizalar */
-  margin-top: 30px;
-  flex-direction: row;
-}
+   grid-template-columns: repeat(4, 250px);
+   grid-gap: 50px;
+   padding: 20px;
+    justify-content: center;
+
+  }
+
+
 
 /* Her bir kartın stilini düzenlemek için */
 .card-content {

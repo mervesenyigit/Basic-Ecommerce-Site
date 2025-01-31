@@ -82,7 +82,7 @@ const Home = () => {
       </div>
    
       <div className="container">
-        <div className="cards">
+        <div className="cards-container">
           {categories.map((category) => (
             <Category key={category.id} category={category} />
           ))}
